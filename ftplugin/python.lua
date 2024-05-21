@@ -38,6 +38,7 @@ end
 
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities = require('cmp_nvim_lsp').default_capabilities()  -- alternatively...
 capabilities.textDocument.completion.completionItem = {
   documentationFormat = { "markdown", "plaintext" },
   snippetSupport = true,
@@ -56,14 +57,12 @@ capabilities.textDocument.completion.completionItem = {
   },
 }
 
--- local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-
 local lspconfig = require("lspconfig")
 lspconfig.pyright.setup({
     capabilities = capabilities,
     on_attach = on_attach,
     filetypes = {"python"},
+    root_dir = lspconfig.util.root_pattern( "setup.py", "pyproject.toml", "setup.cfg", "requirements.txt", "starter", "src", "sln", ".git" ),
 })
 
 -- Start the LSP and attach it to the current buffer Without this line, the LSP
