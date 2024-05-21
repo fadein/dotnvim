@@ -123,7 +123,7 @@ local on_attach = function(client, bufnr)
         name = "Launch file";
         program = "${file}";
         javaPath = function()
-          return '/home/fadein/.local/bin/java'
+          return home .. '/.local/bin/java'
         end;
       },
     }
