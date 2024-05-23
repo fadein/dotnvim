@@ -65,6 +65,9 @@ lspconfig.pyright.setup({
     root_dir = lspconfig.util.root_pattern( "setup.py", "pyproject.toml", "setup.cfg", "requirements.txt", "starter", "src", "sln", ".git" ),
 })
 
+
+vim.o.signcolumn = "yes"
+
 -- Start the LSP and attach it to the current buffer Without this line, the LSP
 -- doesn't attach to a Python buffer when a filename is given on the command
 -- line (https://www.reddit.com/r/neovim/comments/175m02f/filetype_autocmd_doesnt_trigger/)

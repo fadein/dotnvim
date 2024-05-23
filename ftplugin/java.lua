@@ -253,6 +253,8 @@ local config = {
   -- },
 }
 
+vim.o.signcolumn = "yes"
+
 -- Finally, start jdtls. This will run the language server using the configuration we specified,
 -- setup the keymappings, and attach the LSP client to the current buffer
 jdtls.start_or_attach(config)
